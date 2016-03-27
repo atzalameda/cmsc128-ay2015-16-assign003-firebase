@@ -12,46 +12,61 @@
       <script src="index.js"></script>
      
 
-      <style>  
-        html {
-           font-family: GillSans, Calibri, Trebuchet, sans-serif;
-        } 
+      <style> 
+        .done{
+          margin-right:40px;
+        }
       </style> 
 
   </head>
 
   <body>
-      <div class="card-panel blue lighten-3"><h5 class="flow-text" style="font-weight: bold;">Note Pad Alpha</h5></div>
+      <div class="card-panel blue lighten-2" style="height:70px;">
+        <h5 class="flow-text" style="font-weight:bold;"><img src="image/notepad.png" alt="" style="width:50px;height=50px;margin-top:-25px;"> Note Pad Alpha</h5>
+      </div>
 
-      <div id="tasks"> </div>
+      <div class="row"> <!-- START OF ROW -->
 
-      <div>
-        <div class="row">
-          <div class="col s12 m6">
-            <div class="card blue-grey darken-1">
-              <div class="card-content white-text">
+        <!-- START OF COLLECTION FOR TASKS -->
+        <div class="col s6">
+          <div class="card-panel blue lighten-4"><h6 style="font-weight:bold;"> Tasks </h6></div>
+          <ul id="tasks" class="collection">
+          </ul>
+        <a class="btn-floating light-blue darken-4" href="" onclick="removeNote()"><i class="material-icons right">done_all</i></a>
+        </div>
+        <!-- END OF COLLECTION FOR TASKS -->
 
-                <span class="card-title">Note</span>
+        <!-- START OF ADD NOTE -->
+        <div class="col s6">
+          <div class="row">
+            <div class="col s12">
+              <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
 
-                <div class="row">
-                  <div class="input-field col s6">
-                      <input id="title" type="text" class="validate">
-                      <label for="title">Title</label>
+                  <span class="card-title">Note</span>
+
+                  <div class="row">
+                    <div class="input-field col s6">
+                        <input id="title" type="text" class="validate">
+                        <label for="title">Title</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <textarea id="textArea" class="materialize-textarea"></textarea>
+                      <label for="textArea">Task</label>
+                    </div>
                   </div>
-                  <div class="input-field col s12">
-                    <textarea id="textArea" class="materialize-textarea"></textarea>
-                    <label for="textArea">Text</label>
-                  </div>
+                
                 </div>
-              
-              </div>
-              <div class="card-action">
-                <a class="btn-floating blue" href="" onclick="addNote()"><i class="material-icons right">add</i></a>
+                <div class="card-action">
+                  <a class="btn-floating blue" href="" onclick="addNote()"><i class="material-icons right">add</i></a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-    </div>
+      </div>
+      <!-- END OF ADD NOTE -->
+
+    </div> <!-- END OF ROW -->
 
   </body>
 
